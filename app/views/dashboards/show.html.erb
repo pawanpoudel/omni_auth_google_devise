@@ -1,0 +1,9 @@
+<h1>Dashboards#show</h1>
+<p>Find me in app/views/dashboards/show.html.erb</p>
+
+<% if current_user %>
+  <h2><%= current_user.email %>  
+  <%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete %>
+<% else %>
+  <%= link_to "Login", new_user_session_path %>  
+<% end %>
